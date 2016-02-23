@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.coding.willlegend.internhelper.fragment.FragmentHome"
+    tools:showIn="@layout/fragment_home">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@mipmap/yanggou"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/white"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_marginTop="12dp"
+        android:layout_height="1px"
+        android:background="@color/divider"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/profile_image"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view2">
+    </View>
+
+    <ListView
+        android:layout_below="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listView_basicInfo"
+        android:scrollbars="none"
+        >
+    </ListView>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_saveInfo"
+        android:text="保存信息"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@color/red"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
