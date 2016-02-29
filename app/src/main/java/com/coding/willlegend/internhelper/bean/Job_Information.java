@@ -1,25 +1,43 @@
 package com.coding.willlegend.internhelper.bean;
 
 import android.widget.ImageView;
-
+import java.io.Serializable;
 /**
  * Created by user on 2016/2/22.
  */
-public class Job_Information {
-    private ImageView position_image;
+public class Job_Information implements Serializable {
+    private String position_image;
     private String position_name;
     private String company_name;
     private String company_address;
     private String publish_date;
-    private String salary;
-    private String company_description;
-    private String position_description;
+    private int minsalary;
+    private int maxsalary;
+    private String uuid;
 
-    public ImageView getPosition_image() {
+    private String position_degree;
+    private String position_month;
+    private String position_day;
+    private String attraction;
+    private String address_detail;
+    private String position_description;
+    private String deadline;
+    private String cuuid;
+
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getPosition_image() {
         return position_image;
     }
 
-    public void setPosition_image(ImageView position_image) {
+    public void setPosition_image(String position_image) {
         this.position_image = position_image;
     }
 
@@ -55,20 +73,60 @@ public class Job_Information {
         this.publish_date = publish_date;
     }
 
-    public String getSalary() {
-        return salary;
+    public int getMinsalary() {
+        return minsalary;
     }
 
-    public void setSalary(String salary) {
-        this.salary = salary;
+    public void setMinsalary(int minsalary) {
+        this.minsalary = minsalary;
     }
 
-    public String getCompany_description() {
-        return company_description;
+    public int getMaxsalary() {
+        return maxsalary;
     }
 
-    public void setCompany_description(String company_description) {
-        this.company_description = company_description;
+    public void setMaxsalary(int maxsalary) {
+        this.maxsalary = maxsalary;
+    }
+
+    public String getPosition_degree() {
+        return position_degree;
+    }
+
+    public void setPosition_degree(String position_degree) {
+        this.position_degree = position_degree;
+    }
+
+    public String getPosition_month() {
+        return position_month;
+    }
+
+    public void setPosition_month(String position_month) {
+        this.position_month = position_month;
+    }
+
+    public String getPosition_day() {
+        return position_day;
+    }
+
+    public void setPosition_day(String position_day) {
+        this.position_day = position_day;
+    }
+
+    public String getAttraction() {
+        return attraction;
+    }
+
+    public void setAttraction(String attraction) {
+        this.attraction = attraction;
+    }
+
+    public String getAddress_detail() {
+        return address_detail;
+    }
+
+    public void setAddress_detail(String address_detail) {
+        this.address_detail = address_detail;
     }
 
     public String getPosition_description() {
@@ -77,5 +135,21 @@ public class Job_Information {
 
     public void setPosition_description(String position_description) {
         this.position_description = position_description;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getCuuid() {
+        return cuuid;
+    }
+
+    public void setCuuid(String cuuid) {
+        this.cuuid = cuuid;
     }
 }

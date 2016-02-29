@@ -5,6 +5,7 @@
     <color name="red">#F64E65</color>
     <color name="divider">#C0C0C0</color>
     <color name="white">#FFFFFF</color>
+    <color name="main_back">#FCFCFC</color>
     <color name="black">#474747</color>
 
 </resources>

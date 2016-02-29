@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -9,11 +11,18 @@
         android:layout_weight="1"
         android:paddingTop="15dp"
         android:layout_marginBottom="15dp">
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/position_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:background="#ff0000"/>
+            />
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!---->
+            <!--android:background="#ff0000"-->
+            <!--android:id="@+id/position_image"/>-->
     </LinearLayout>
 
 
@@ -27,15 +36,16 @@
             android:layout_marginLeft="10dp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:id="@+id/position_name"
-                android:textSize="16sp"
-                android:text="安卓开发工程师"
+                android:textSize="15sp"
+                android:text=""
                 android:textStyle="bold"
+                android:paddingBottom="3dp"
                 />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="25dp"
                 android:id="@+id/company_name"
                 android:textSize="13sp"
                 android:text="三门峡外高集团"
@@ -43,7 +53,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:id="@+id/address"
+                android:id="@+id/company_address"
                 android:textSize="13sp"
                 android:text="三门峡监狱"
                 />
@@ -53,7 +63,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_weight="1"
+        android:layout_weight="1.1"
         android:orientation="vertical"
         android:paddingTop="10dp"
         android:layout_marginLeft="10dp"
@@ -69,11 +79,20 @@
             android:text="2016-01-01 更新"
             />
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/salaryname"
+            android:textSize="12sp"
+            android:text="日薪:"
+            android:textColor="#FF4040"
+            />
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
             android:id="@+id/salary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:text="薪酬:6k-8k"
             android:textColor="#FF4040"
             />
