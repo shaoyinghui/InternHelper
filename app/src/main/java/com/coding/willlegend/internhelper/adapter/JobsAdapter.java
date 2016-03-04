@@ -99,9 +99,10 @@ public class JobsAdapter extends BaseAdapter {
         cache.company_address.setText(jobitem.getCompany_address());
         cache.publish_date.setText(jobitem.getPublish_date());
         cache.publish_date.append("更新");
-        cache.salary.setText(String.valueOf(jobitem.getMinsalary()));
-        cache.salary.append("-");
-        cache.salary.append(String.valueOf(jobitem.getMaxsalary()));
+//        cache.salary.setText(String.valueOf(jobitem.getMinsalary()));
+//        cache.salary.append("-");
+//        cache.salary.append(String.valueOf(jobitem.getMaxsalary()));
+        cache.salary.setText(jobitem.getSalary());
         final Job_Information jobdata= jobitem;
 
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +140,10 @@ public class JobsAdapter extends BaseAdapter {
     }
     public void addJobs(List<Job_Information> newlist) {
         jobs.addAll(newlist);
+    }
+
+    public void deleteJob(int posi) {
+        jobs.remove(posi);
     }
 
 

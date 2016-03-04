@@ -1,6 +1,7 @@
 package com.coding.willlegend.internhelper.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
@@ -8,11 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import com.coding.willlegend.internhelper.DataCleanManager;
 import com.coding.willlegend.internhelper.R;
+import com.coding.willlegend.internhelper.activity.Login;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,18 +27,28 @@ public class FragmentSetting extends Fragment {
     ListView listView;
     SimpleAdapter simpleAdapter;
     List<Map<String,String>> list;
+    Button btn_quit;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_setting,null);
+
+        btn_quit= (Button) view.findViewById(R.id.btn_quit);
+        btn_quit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),Login.class);
+                startActivity(intent);
+            }
+        });
+
         list= new ArrayList<>();
         listView= (ListView) view.findViewById(R.id.listView_setting);
         simpleAdapter=new SimpleAdapter(getActivity(),getData(),R.layout.item_setting,
                 new String[]{"text"},new int[]{R.id.text_setting});
         listView.setAdapter(simpleAdapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -14,6 +14,7 @@ public class Job_Information implements Serializable {
     private int minsalary;
     private int maxsalary;
     private String uuid;
+    private String salary;
 
     private String position_degree;
     private String position_month;
@@ -24,6 +25,13 @@ public class Job_Information implements Serializable {
     private String deadline;
     private String cuuid;
 
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
 
     public String getUuid() {
         return uuid;

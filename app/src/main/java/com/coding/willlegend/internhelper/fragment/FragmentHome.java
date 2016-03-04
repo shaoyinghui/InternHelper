@@ -1,6 +1,7 @@
 package com.coding.willlegend.internhelper.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.coding.willlegend.internhelper.R;
+import com.coding.willlegend.internhelper.activity.SearchActivity;
 import com.coding.willlegend.internhelper.adapter.JobsAdapter;
 import com.coding.willlegend.internhelper.bean.Job_Information;
 import com.coding.willlegend.internhelper.bean.Job_Json;
@@ -97,6 +99,8 @@ public class FragmentHome extends Fragment implements SwipeRefreshLayout.OnRefre
 //                mSearchView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
 //                        RelativeLayout.LayoutParams.MATCH_PARENT));
                 mSearchView.setBackgroundResource(R.color.main_back);
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
 
             }
 
@@ -175,8 +179,9 @@ public class FragmentHome extends Fragment implements SwipeRefreshLayout.OnRefre
                         job.setCompany_name(list.get(i).getCname());
                         job.setCompany_address(list.get(i).getCity());
                         job.setPublish_date(list.get(i).getRefresh());
-                        job.setMinsalary(list.get(i).getMinsal());
-                        job.setMaxsalary(list.get(i).getMaxsal());
+                        job.setSalary(String.valueOf(list.get(i).getMinsal())+"-"+String.valueOf(list.get(i).getMaxsal()));
+//                        job.setMinsalary(list.get(i).getMinsal());
+//                        job.setMaxsalary(list.get(i).getMaxsal());
                         job.setUuid(list.get(i).getUuid());
                         datalist.add(job);
                     }

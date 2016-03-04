@@ -49,6 +49,8 @@
                 android:id="@+id/company_name"
                 android:textSize="13sp"
                 android:text="三门峡外高集团"
+                android:singleLine="true"
+                android:ellipsize="end"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -56,6 +58,8 @@
                 android:id="@+id/company_address"
                 android:textSize="13sp"
                 android:text="三门峡监狱"
+                android:singleLine="true"
+                android:ellipsize="end"
                 />
         </LinearLayout>
 

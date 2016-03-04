@@ -17,10 +17,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.coding.willlegend.internhelper.fragment.FragmentBasicInfo;
+import com.coding.willlegend.internhelper.fragment.FragmentCollect;
+import com.coding.willlegend.internhelper.fragment.FragmentFind;
 import com.coding.willlegend.internhelper.fragment.FragmentHome;
 import com.coding.willlegend.internhelper.fragment.FragmentSetting;
-import com.coding.willlegend.internhelper.navgation.nav_personalInfo;
-import com.coding.willlegend.internhelper.navgation.nav_setting;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -92,8 +92,16 @@ public class MainActivity extends AppCompatActivity
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("主页");
         } else if (id == R.id.nav_find) {
-
+            FragmentFind fragmentFind=new FragmentFind();
+            fragmentManager.beginTransaction().replace(R.id.container,fragmentFind).commit();
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("发现");
         } else if (id == R.id.nav_like) {
+            FragmentCollect fragmentCollect=new FragmentCollect();
+            fragmentManager.beginTransaction().replace(R.id.container,fragmentCollect).commit();
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("我的收藏");
+
 
         } else if (id == R.id.nav_personalInfo) {
             FragmentBasicInfo fragmentBasicInfo=new FragmentBasicInfo();

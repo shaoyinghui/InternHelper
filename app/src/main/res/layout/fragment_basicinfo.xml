@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.coding.willlegend.internhelper.fragment.FragmentHome"
-    tools:showIn="@layout/fragment_home">
+>
 
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,14 +28,6 @@
         android:id="@+id/view2">
     </View>
 
-    <ListView
-        android:layout_below="@+id/view2"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/listView_basicInfo"
-        android:scrollbars="none"
-        >
-    </ListView>
 
     <Button
         android:layout_width="fill_parent"
@@ -50,5 +39,173 @@
         android:background="@color/red"
         android:layout_alignParentBottom="true"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="姓名"
+        android:id="@+id/tv_name"
+        android:textSize="16sp"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="周洋"
+        android:gravity="right"
+        android:textColor="@color/material_blue_grey_800"
+        android:layout_marginTop="6dp"
+        android:background="@null"
+        android:textSize="16sp"
+        android:id="@+id/et_name"
+        android:layout_alignBottom="@+id/textView_personalInfo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/view2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="性别"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:id="@+id/textView_gender"
+        android:layout_above="@+id/et_school"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="男"
+        android:gravity="right"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:id="@+id/tv_chooseGender"
+        android:layout_below="@+id/et_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="毕业学校"
+        android:id="@+id/tv_school"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:layout_alignTop="@+id/et_school"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_school"
+        android:textSize="16sp"
+        android:textColor="@color/material_blue_grey_800"
+        android:layout_marginTop="6dp"
+        android:text="交大"
+        android:gravity="right"
+        android:background="@null"
+        android:layout_below="@+id/tv_chooseGender"
+        android:layout_alignRight="@+id/tv_chooseGender"
+        android:layout_alignEnd="@+id/tv_chooseGender" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最高学历"
+        android:id="@+id/textView_degree"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/tv_school"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本科"
+        android:id="@+id/tv_degree"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/et_school"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="专业"
+        android:textSize="16sp"
+        android:id="@+id/textView_major"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/textView_degree"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_major"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:text="软件工程"
+        android:textColor="@color/material_blue_grey_800"
+        android:gravity="right"
+        android:background="@null"
+        android:layout_below="@+id/tv_degree"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电话号码"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/textView_major"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:gravity="right"
+        android:layout_marginTop="6dp"
+        android:id="@+id/et_phone"
+        android:background="@null"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="邮箱地址"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/et_phone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginTop="6dp"
+        android:id="@+id/et_email"
+        android:background="@null"
+        android:layout_below="@+id/et_phone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
 
 </RelativeLayout>
