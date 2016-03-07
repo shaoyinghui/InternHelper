@@ -1,15 +1,19 @@
 package com.coding.willlegend.internhelper.fragment;
 
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -54,17 +58,54 @@ public class FragmentSetting extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch(position){
                     case 0:
-                        Toast.makeText(getActivity(), "Designed by 怪兽公司", Toast.LENGTH_SHORT).show();
-//                        Intent intent=new Intent();
-//                        startActivity(intent);
+
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                        builder1.setTitle("关于实习了么");
+                        builder1.setIcon(R.mipmap.intern_icon);
+
+                        builder1.setMessage("感谢您的使用，实习了么致力于为您提供最全面的实习信息\n\n客服电话：123456789\n\nDesigned by monster公司");
+                        builder1.setPositiveButton("确定",null);
+                        //builder.setMessage("客服电话：123456789");
+                        //builder.setNegativeButton("取消", null);
+                        AlertDialog dialog1 = builder1.create();
+                        dialog1.show();
+
+                        WindowManager.LayoutParams layoutParams1 = dialog1.getWindow().getAttributes(); ;
+                        layoutParams1.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        layoutParams1.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                        dialog1.getWindow().setAttributes(layoutParams1);
+
                         break;
                     case 1:
                         try {
-                            DataCleanManager dataCleanManager=new DataCleanManager();
+                            final DataCleanManager dataCleanManager=new DataCleanManager();
                             String message= null;
                             message = dataCleanManager.getTotalCacheSize(getActivity());
-                            Toast.makeText(getActivity(), "已清除" + message + "缓存", Toast.LENGTH_SHORT).show();
-                            dataCleanManager.clearAllCache(getActivity());
+
+                            AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
+                            builder2.setTitle("清除缓存");
+                            builder2.setIcon(R.mipmap.intern_icon);
+                            builder2.setMessage("确认清除共"+message+"的缓存吗？");
+                            builder2.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Toast.makeText(getActivity(), "缓存清除成功！", Toast.LENGTH_SHORT).show();
+                                    dataCleanManager.clearAllCache(getActivity());
+                                }
+                            });
+                            builder2.setNegativeButton("取消", null);
+                            AlertDialog dialog2 = builder2.create();
+                            dialog2.show();
+
+                            WindowManager.LayoutParams layoutParams2 = dialog2.getWindow().getAttributes(); ;
+                            layoutParams2.width = WindowManager.LayoutParams.MATCH_PARENT;
+                            layoutParams2.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                            dialog2.getWindow().setAttributes(layoutParams2);
+
+
+
+
+
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

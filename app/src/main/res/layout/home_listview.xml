@@ -17,12 +17,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             />
-        <!--<ImageView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!---->
-            <!--android:background="#ff0000"-->
-            <!--android:id="@+id/position_image"/>-->
+
     </LinearLayout>
 
 
